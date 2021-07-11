@@ -39,6 +39,12 @@ class DnaSequence:
     def __add__(self, other):
         return self.string + other.string
 
+    def set_string(self, string):
+        self.string = get_valid_string(string)
+
+    def get_string(self):
+        return self.string
+
 
 def get_valid_string(string):
     valid_characters = [i if i in NUCLEOTIDES else '' for i in string]

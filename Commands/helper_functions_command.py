@@ -31,3 +31,11 @@ def get_seq_to_print(sequence):
     if len(sequence) > 40:
         return sequence[:32] + '...' + sequence[-3:]
     return sequence
+
+
+def get_dna(string):
+    if string[0] == '#':
+        return get_dna_by_id(string[1:])
+    elif string[0] == '@':
+        return get_dna_by_name(string[1:])
+    return None

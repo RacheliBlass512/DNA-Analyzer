@@ -2,6 +2,9 @@ from CLI.CLI import CLI
 from Commands.SequenceCreationCommands.DupCommand import DupCommand
 from Commands.SequenceCreationCommands.LoadCommand import LoadCommand
 from Commands.SequenceCreationCommands.NewCommand import NewCommand
+from Commands.SequenceManagementCommands.DelCommand import DelCommand
+from Commands.SequenceManagementCommands.SaveCommand import SaveCommand
+from Commands.SequenceManipulationCommands.ReplaceCommand import ReplaceCommand
 from Commands.SequenceManipulationCommands.SliceCommand import SliceCommand
 from Commands.helper_functions_command import not_valid_str
 
@@ -13,7 +16,10 @@ class CMD(CLI):
             'new': NewCommand(),
             'load': LoadCommand(),
             'dup': DupCommand(),
-            'slice': SliceCommand()
+            'slice': SliceCommand(),
+            'replace': ReplaceCommand(),
+            'del': DelCommand(),
+            'save': SaveCommand()
         }
 
     def start(self):
