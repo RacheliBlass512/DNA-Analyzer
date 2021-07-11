@@ -1,8 +1,15 @@
-from CLI import CLI
-from DNA import DNA
-from DnaSequence import DnaSequence
+from CLI.CLI import CLI
+from CLI.CMD import CMD
 
 if __name__ == '__main__':
+    cli = CMD()
+    cli.start()
+    # d1 = DNA('AACT', "racheil")
+    # d2 = DNA('TTCG')
+    # d3 = DNA('CCT')
+    # print(d1)
+    # print(d2)
+    # print(d3)
     # dna1 = DnaSequence("AA")
     # print(dna1)
     # dna1.assignment("A")
@@ -20,11 +27,3 @@ if __name__ == '__main__':
     # print(dna3 == dna5)
     # print(dna3 != dna5)
     # print(len(dna3))
-    cli = CLI()
-    cli.start()
-    # d1 = DNA('AACT', "racheil")
-    # d2 = DNA('TTCG')
-    # d3 = DNA('CCT')
-    # print(d1)
-    # print(d2)
-    # print(d3)

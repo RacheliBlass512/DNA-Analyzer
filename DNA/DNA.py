@@ -1,4 +1,4 @@
-from DnaSequence import DnaSequence
+from DNA.DnaSequence import DnaSequence
 
 
 class DNA:
@@ -21,3 +21,6 @@ class DNA:
 
     def get_name(self):
         return self.name
+
+    def set_sequence(self, new_sequence):
+        self.sequence.set_string(new_sequence)
