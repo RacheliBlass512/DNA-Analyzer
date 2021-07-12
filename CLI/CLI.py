@@ -9,7 +9,7 @@ class CLI:
             command_string = input(self.prompt)
             if command_string == '': continue
             result = self.handle_command(command_string)
-            if result:
+            if result!='':
                 print(result)
 
     def handle_command(self, command_string):

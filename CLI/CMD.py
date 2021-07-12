@@ -1,4 +1,6 @@
 from CLI.CLI import CLI
+from Commands.SequenceAnalysisCommands.RegularFindCommand import RegularFindCommand
+from Commands.SequenceAnalysisCommands.findallCommand import findallCommand
 from Commands.SequenceCreationCommands.DupCommand import DupCommand
 from Commands.SequenceCreationCommands.LoadCommand import LoadCommand
 from Commands.SequenceCreationCommands.NewCommand import NewCommand
@@ -19,7 +21,9 @@ class CMD(CLI):
             'slice': SliceCommand(),
             'replace': ReplaceCommand(),
             'del': DelCommand(),
-            'save': SaveCommand()
+            'save': SaveCommand(),
+            'find': RegularFindCommand(),
+            'findall': findallCommand()
         }
 
     def start(self):
