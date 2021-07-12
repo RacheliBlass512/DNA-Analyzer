@@ -1,6 +1,6 @@
 from Commands.Command import Command
 
-not_valid_str = "not valid command"
+not_valid_str = "command invalid"
 missing_char = "expected @"
 
 
