@@ -1,6 +1,5 @@
 from CLI.CLI import CLI
-from Commands.BatchCommands.BatchCreation import BatchCreation
-from Commands.BatchCommands.RunningBatches import RunningBatches
+from Commands import BatchCommands
 from Commands.SequenceAnalysisCommands.RegularFindCommand import RegularFindCommand
 from Commands.SequenceAnalysisCommands.findallCommand import findallCommand
 from Commands.SequenceCreationCommands.DupCommand import DupCommand
@@ -26,8 +25,8 @@ class CMD(CLI):
             'save': SaveCommand(),
             'find': RegularFindCommand(),
             'findall': findallCommand(),
-            'batch': BatchCreation(),
-            'run': RunningBatches()
+            'batch': BatchCommands.BatchCreation(),
+            'run': BatchCommands.RunningBatches()
         }
 
     def start(self):
