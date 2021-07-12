@@ -9,5 +9,5 @@ class BatchCreation(BatchCommand):
         batch_cli = Batch()
         batch_cli.start()
         new_batch = batch_cli.get_all_commands()
-        self.batches_dict[args[0]] = new_batch
+        BatchCommand.batches_dict[args[0]] = new_batch
         return ''
