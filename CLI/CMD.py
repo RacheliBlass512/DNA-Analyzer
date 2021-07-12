@@ -1,4 +1,5 @@
 from CLI.CLI import CLI
+from Commands.BatchCommands.BatchCreation import BatchCreation
 from Commands.SequenceAnalysisCommands.RegularFindCommand import RegularFindCommand
 from Commands.SequenceAnalysisCommands.findallCommand import findallCommand
 from Commands.SequenceCreationCommands.DupCommand import DupCommand
@@ -23,7 +24,8 @@ class CMD(CLI):
             'del': DelCommand(),
             'save': SaveCommand(),
             'find': RegularFindCommand(),
-            'findall': findallCommand()
+            'findall': findallCommand(),
+            'batch': BatchCreation()
         }
 
     def start(self):
