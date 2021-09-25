@@ -26,7 +26,7 @@ be used.
 ## Now let's go over the commands:
 ###  - **new** command:
 
-```cmd
+```
 > cmd >>> new <sequence> [@<sequence_name>]
 ```
 
@@ -39,22 +39,22 @@ name is already taken).
 The new sequence, its name and its number (internal ID, starting with 1) are
 printed.
 
-$For$ $Example:$
-```cmd
+*For Example:*
+```
 > cmd >>> new ATACTGCCTGAATAC @short_seq
 ```
 will create that sequence;
 
 if this is the first sequence, it will be numbered "1" and the following will be
 printed:
-```cmd
+```
 [1] short_seq: ATACTGCCTGAATAC
 ```
 
 
 ###  - **load** command:
 
-```cmd
+```
 > cmd >>> load <file_name> [@<sequence_name>]
 ```
 
@@ -64,7 +64,7 @@ name already exists), and prints it.
 
 ###  - **dup** command:
 
-```cmd
+```
 > cmd >>> dup <seq> [@<new_seq_name>]
 ```
 
@@ -76,7 +76,7 @@ by `_1` (or `_2`, `_3`, ... if the name is already taken).
 ## Sequence Manipulation Commands:
 ###  - **slice** command:
 
-```cmd
+```
 > cmd >>> slice <seq> <from_ind> <to_ind> [: [@<new_seq_name>|@@]]
 ```
 
@@ -90,7 +90,7 @@ already occupied, with the suffix `_s2`, and so on).
 
 ###  - **replace** command:
 
-```cmd
+```
 > cmd >>> replace <seq> <index> <new_letter> [: [@<new_seq_name>|@@]]
 ```
 
