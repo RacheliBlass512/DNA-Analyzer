@@ -23,7 +23,8 @@ arguments.
 - **arg1|arg2** - Pipe sign ("|") between words represents that each one of them can
 be used.
 
-## Now let's go over the commands:
+## *Now let's go over the commands*:
+## Sequence Creation Commands:
 ###  - **new** command:
 
 ```
@@ -104,3 +105,90 @@ The command might get more than a single replacement. In that case, after `< seq
 there will be more than one pair of `< index>` and `<new_letter>`.
 
 
+## Sequence Management Commands:
+### - **del** command:
+```
+> cmd >>> del <seq>
+```
+deletes that sequence.
+
+Before deleting it, the user is asked to confirm that:
+Confirmation is done by entering `y` or `Y`, Entering `n` or `N` cancels the deletion. Any
+other input will result in a message that asks the user again to confirm the deletion.
+Once confirmed, the sequence is deleted and a message is printed. Otherwise, a
+cancellation message is printed.
+
+*So, a deletion scenario might look like*:
+```
+> cmd >>> del #23
+Do you really want to delete conseq_1_1: ATACTGCCTGAATACAGCATAGCATTGCCT?
+Please confirm by 'y' or 'Y', or cancel by 'n' or 'N'.
+> confirm >>> x
+You have typed an invalid response. Please either confirm by 'y'/'Y', or
+cancel by 'n'/'N'.
+> confirm >>> Y
+Deleted: [23] conseq_1_1: ATACTGCCTGAATACAGCATAGCATTGCCT
+```
+
+
+### - **save** command:
+```
+> cmd >>> save <seq> [<filename>]
+```
+saves sequence `<seq>` to a file.
+
+If `<filename>` is not provided, the sequence name is being used.
+The filename is suffixed by .rawdna.
+
+## Sequence Analysis Commands:
+
+### - **find** command:
+The find command finds a sub-sequence within a sequence.
+
+It has two flavors:
+1. Takes an expressed sub-sequence:
+```
+> cmd >>> find <seq> <expressed_sub_seq>
+```
+returns the (0-based) index of the first appearance of `<expressed_sub_seq>` in
+the sequence `<seq>`.
+
+*Thus, for example:*
+
+If sequence `#11` is `AACCTTGGAATTCCGGAA` and we are looking for the
+sub-sequence `GG`, it will look like:
+```
+> cmd >>> find #11 GG
+7
+```
+2. Refers an existing sub-sequence:
+```
+> cmd >>> find <seq_to_find_in> <seq_to_be_found>
+```
+*Thus, for example:*
+
+If seq `#11` is as appears above, and sequence `#25` is `CTTGGA`, it might look like:
+```
+> cmd >>> find #11 #25
+4
+```
+
+### - **findall** command:
+```
+> cmd >>> findall <seq> <expressed_sub_seq>
+```
+```
+> cmd >>> findall <seq_to_find_in> <seq_to_be_found>
+```
+work very similar to find, only they return all the indices where the sub-sequence
+appears.
+
+*Thus, for example:*
+
+Using the above sequence for sequence `#11`, it might look like:
+```
+> cmd >>> findall #11 GA
+8 16
+> cmd >>> findall #11 AA
+1 9 17
+```
