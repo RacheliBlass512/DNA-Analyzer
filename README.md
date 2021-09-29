@@ -30,7 +30,7 @@ I again inherited. There is a `Command` class and any class that inherits from i
 
 * **Command** is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations.
 
-in my code - the class  `Command` implements that stand-alone object. each class that inherits from the Command class must implement the `execute()` method. so that - in order to execute any command you can simply call the `execute()` method :happy:
+in my code - the class  `Command` implements that stand-alone object. each class that inherits from the Command class must implement the `execute()` method. so that - in order to execute any command you can simply call the `execute()` method :smile:
 
 * **Decorator** is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
 
