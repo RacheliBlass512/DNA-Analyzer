@@ -45,7 +45,9 @@ the class Commmand is the base class. some commands like `new` inherits from thi
 
 
 ***
-in order to understand the command it is important to understand the common CLI markings.
+
+## *Now let's go over the commands*:
+in order to understand the commands it is important to understand the common CLI markings.
 ### Common CLI markings:
 - **[argument]** - Words starting with "[", ending with "]" represent optional
 arguments.
@@ -54,7 +56,6 @@ arguments.
 - **arg1|arg2** - Pipe sign ("|") between words represents that each one of them can
 be used.
 
-## *Now let's go over the commands*:
 ## Sequence Creation Commands:
 ###  - **new** command:
 
