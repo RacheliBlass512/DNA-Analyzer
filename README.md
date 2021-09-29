@@ -14,7 +14,38 @@ sequence slices or by modifying the sequence), and to **store** modified sequenc
 reports.
 The commands are detailed in the following sections.
 
-First of all, common CLI markings
+
+## *project structure*
+If we do a short and quick overview of the project structure we will try to do it like this:
+
+All things related to the user interface are inherits from the `CLI` class which implements a simple loop in which to call the `handle_command()` function of the inheriting class.
+ 
+Thus, when we start the program, in the `main()`, we call `CMD()` that it inherits from the `CLI` with prompt `'> cmd >>>' `and every command that comes comes in is managed in the above function.
+
+How?
+
+I again inherited. There is a `Command` class and any class that inherits from it implements the `execute()` function. This is how I can just call the class that is actually the current command I received and call the `execute()` method, without thinking twice ....
+
+### *which disgin patterns I used?*
+
+* **Command** is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations.
+
+in my code - the class  `Command` implements that stand-alone object. each class that inherits from the Command class must implement the `execute()` method. so that - in order to execute any command you can simply call the `execute()` method :happy:
+
+* **Decorator** is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+
+in my code - there is the abstract class `CLI`, and you can use all the versions of CLI: Batch, CMD or Confirm.
+all of these options are using the `start()` method.
+
+* **Abstract Factory** is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
+ 
+in my code - the hirarchy in the commmands:
+
+the class Commmand is the base class. some commands like `new` inherits from this class, and some classes inherit from another class inherent in the `Command `class. like `FindCommand` inherts from `Command` and `RegularFindCommand` from `FindCommand`.
+
+
+***
+in order to understand the command it is important to understand the common CLI markings.
 ### Common CLI markings:
 - **[argument]** - Words starting with "[", ending with "]" represent optional
 arguments.
@@ -192,3 +223,4 @@ Using the above sequence for sequence `#11`, it might look like:
 > cmd >>> findall #11 AA
 1 9 17
 ```
+
