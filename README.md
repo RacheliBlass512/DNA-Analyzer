@@ -1,4 +1,4 @@
-# DNA Analyzer - Rachel Blass
+# DNA Analyzer
 The goal of the system is to load, analyze, manipulate and save DNA sequences.
 
 ### Description
